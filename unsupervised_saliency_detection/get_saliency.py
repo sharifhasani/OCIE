@@ -67,7 +67,7 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 
 ## input / output dir
 parser.add_argument('--out-dir', type=str, default='../datasets/CUB/train_cub_1_2_mask', help='output directory')
-parser.add_argument('--img_dir', type=str, default='../datasets/DUTS_Test/car/train', help='output directory')
+parser.add_argument('--img-dir', type=str, default='../datasets/DUTS_Test/car/train', help='output directory')
 
 parser.add_argument('--vit-arch', type=str, default='base', choices=['base', 'small'], help='which architecture')
 
@@ -133,7 +133,7 @@ count_vis = 0
 mask_lost = []
 mask_bfs = []
 gt = []
-data_dir ='../datasets/CUB/train_cub_1_2'
+data_dir = args.img_dir
 result_dir='../datasets/CUB/train_cub_1_2_mask'
 backbone = dino.ViTFeat(url, feat_dim, args.vit_arch, args.vit_feat, args.patch_size)
 backbone.eval()
