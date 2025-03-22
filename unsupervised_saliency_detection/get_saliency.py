@@ -134,7 +134,7 @@ mask_lost = []
 mask_bfs = []
 gt = []
 data_dir = args.img_dir
-result_dir = f'{args.img_dir}_mask'
+result_dir = args.out_dir
 backbone = dino.ViTFeat(url, feat_dim, args.vit_arch, args.vit_feat, args.patch_size)
 backbone.eval()
 backbone.cuda()
