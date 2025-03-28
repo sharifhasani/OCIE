@@ -1,3 +1,4 @@
+S:\Python\AI\OCIE\baseline_train_eval.py
 import argparse
 import os
 import random
@@ -267,7 +268,7 @@ def main_worker(gpu, ngpus_per_node, args, logger):
         # model.module.fc = nn.Linear(2048, num_classes)
         model.fc = nn.Linear(2048, num_classes)
     model = model.cuda()
-    # logger.info(model)
+    logger.info(model)
 
     cudnn.benchmark = True
 
@@ -512,3 +513,8 @@ def accuracy(output, target, topk=(1,)):
 
 if __name__ == '__main__':
     main()
+
+Namespace(data='', arch='resnet50', workers=0, epochs=90, start_epoch=0, batch_size=128, lr=0.01, momentum=0.9, weight_decay=0.0001, print_freq=10, resume='', evaluate=False, pretrained=True, world_size=-1, rank=-1, dist_backend='nccl', seed=None, gpu=0, multiprocessing_distributed=False, save_dir='checkpoint', log_dir='logs--baseline-50', dataset='aircraft')
+Use GPU: 0 for training
+=> using pre-trained model 'resnet50'
+using CPU, this will be slow
